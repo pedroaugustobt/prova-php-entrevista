@@ -1,38 +1,47 @@
 # Teste de conhecimentos PHP + Banco de dados
-##### Objetivo
-Criar um Crud simples, totalmente desenvolvido em PHP, sem a utilização de frameworks, onde será possível Criar/Editar/Excluir/Listar usuários. O sistema também deve possuir a possibilidade de vincular/desvincular várias cores ao usuário.
 
-##### Estrutura de banco de dados
-A seguinte estrutura será utilizada para persistência dos dados, podendo ser alterada a qualquer momento para melhor funcionamento do sistema:
+## Sobre o Projeto
+O Teste de conhecimentos PHP + Banco de dados é uma aplicação web desenvolvida em PHP, utilizando PHP 8.2, jQuery, Bootstrap e o banco de dados SQLite. A aplicação segue a arquitetura MVC (Model-View-Controller) e foi executada localmente através do servidor web.
 
-```sql
-    tabela: users
-        id      int not null auto_increment primary key
-        name    varchar(100) not null
-        email   varchar(100) not null
+### Requisitos
+- PHP 8.2 ou superior;
 ```
-```sql
-    tabela: colors
-        id      int not null auto_increment primary key
-        name    varchar(50) not null
+apt install php
 ```
-```sql
-    tabela: user_colors
-        color_id  int
-        user_id   int
+- Extensão do SQlite para o Php.
+``` 
+apt install php-sqlite3
 ```
+- Servidor web (Apache, Nginx, etc.)
 
-##### Start
-Este projeto conta com uma base sqlite com alguns registros já inseridos. Para início das atividades, use como base o arquivo `index.php`, este é apenas um arquivo exemplo onde é aberta conexão com o banco de dados e lista os usuários em uma tabela.
+### Instalação
+- Clone o repositório do GitHub: 
+```
+git clone https://github.com/pedroaugustobt/prova-php-entrevista.git
+```
+- Navegue até o diretório do projeto
+- Execute a aplicação através do servidor web local.
 
-##### Pontos que serão levados em conta
-- Funcionalidade
-- Organização do código e projeto
-- Apresentação da interface (Poderá usar frameworks CSS como Bootstrap, Material, Foundation etc)
+### Estrutura do Projeto
+- `app/`: Contém as classes PHP da aplicação, organizadas em subdiretórios:
+  - `config/`: Configurações da aplicação.
+  - `controllers/`: Controladores da aplicação seguindo o padrão MVC.
+  - `models/`: Modelos de dados da aplicação.
+  - `views/`: Visualizações da aplicação, organizadas em subdiretórios:
+    - `color/`: Visualizações relacionadas às cores.
+    - `user/`: Visualizações relacionadas aos usuários.
+- `core/`: Contém arquivos essenciais da aplicação, como a classe `Connection.php` e o arquivo do banco de dados.
+- `public/`: Contém recursos públicos acessíveis através do navegador:
+  - `css/`: Arquivos de estilo CSS.
+  - `js/`: Arquivos JavaScript.
+  - `index.php`: Ponto de entrada da aplicação.
 
-##### Dicas
-- Para utilizar o banco de dados contido na pasta `database/db.sqlite` é necessário que a sua instalação do php tenha a extensão do sqlite instalada e ativada
-- O Php possui um servidor embutido, você consegue dar start ao projeto abrindo o terminal de comando na pasta baixada e executando `php -S 0.0.0.0:7070` e em seguida abrir o navegador em `http://localhost:7070`
-
-##### Boa Sorte
-Use seu conhecimento, consulte a documentação e o google, caso ainda houver dúvidas, nos pergunte :D. Boa sorte!
+### Uso
+- Inicie o servidor web local.
+- Acesse o projeto em seu navegador:
+```
+http://localhost/seu-caminho/public/index.php
+```
+- Ao acessar a interface, você pode Adicionar, Editar, Gerenciar Cores ou Excluir o usuário.
+- Há uma validação onde você não pode Adicionar o mesmo email de um usuário já existente, isso se aplica no Editar.
+- Você pode Adicionar um usuário definindo ou não se ele tem uma Cor vinculada ao seu `id`.
