@@ -1,0 +1,21 @@
+.align-mid {
+    align-content: space-around;
+}
+.display-none {
+    display: none !important;
+}
+.margin-15 {
+    margin: 15px;
+}
+.color-ball {
+    width: 20px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    border-color: #0000005c;
+    color: transparent;
+    pointer-events: none;
+}
+.text-left {
+    text-align: left;
+}
